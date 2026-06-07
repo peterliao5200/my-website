@@ -1,0 +1,4 @@
+.netlify/
+.npm-cache/
+.vscode/
+node_modules/

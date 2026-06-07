@@ -1,0 +1,9 @@
+.git/
+.github/
+.netlify/
+.vscode/
+node_modules/
+.npm-cache/
+.codex_deps/
+package.json
+package-lock.json

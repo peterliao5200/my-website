@@ -20,19 +20,14 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
   });
 });
 
-bookingForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+if (bookingForm && formStatus) {
+  bookingForm.addEventListener("submit", () => {
+    const formData = new FormData(bookingForm);
+    const name = String(formData.get("name") || "").trim();
 
-  if (!bookingForm.checkValidity()) {
-    bookingForm.reportValidity();
-    return;
-  }
-
-  const formData = new FormData(bookingForm);
-  const name = String(formData.get("name")).trim();
-  const course = String(formData.get("course")).trim();
-
-  formStatus.textContent = `${name} 你好，已收到你對「${course}」的預約資訊。工坊將於人工確認後與你聯絡，謝謝。`;
-  formStatus.classList.add("is-visible");
-  bookingForm.reset();
-});
+    formStatus.textContent = name
+      ? `${name}，表單正在送出，請稍候。`
+      : "表單正在送出，請稍候。";
+    formStatus.classList.add("is-visible");
+  });
+}
