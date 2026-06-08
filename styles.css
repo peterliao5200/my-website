@@ -782,6 +782,10 @@ textarea:focus {
   background: #111;
 }
 
+.reference-gallery.dense img {
+  aspect-ratio: 9 / 12;
+}
+
 .reference-gallery figcaption {
   padding: 14px 16px 16px;
   color: var(--muted);
