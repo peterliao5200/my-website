@@ -746,6 +746,49 @@ textarea:focus {
   border-radius: 8px;
 }
 
+.reference-block {
+  width: min(1120px, 100%);
+  margin: 36px auto 0;
+}
+
+.reference-block .section-heading {
+  margin-bottom: 22px;
+}
+
+.reference-block .section-heading h3 {
+  color: var(--walnut);
+  font-size: clamp(1.45rem, 2.2vw, 2rem);
+}
+
+.reference-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.reference-gallery figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(61, 36, 24, 0.14);
+  border-radius: 8px;
+  background: var(--plain-white);
+  box-shadow: 0 12px 30px rgba(36, 20, 14, 0.08);
+}
+
+.reference-gallery img {
+  width: 100%;
+  aspect-ratio: 9 / 13;
+  object-fit: contain;
+  background: #111;
+}
+
+.reference-gallery figcaption {
+  padding: 14px 16px 16px;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
 .task-steps {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -881,7 +924,8 @@ textarea:focus {
 
   .task-card-grid,
   .task-steps,
-  .task-gallery {
+  .task-gallery,
+  .reference-gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -969,6 +1013,7 @@ textarea:focus {
   .task-card-grid,
   .task-steps,
   .task-gallery,
+  .reference-gallery,
   .task-checklist {
     grid-template-columns: 1fr;
   }
